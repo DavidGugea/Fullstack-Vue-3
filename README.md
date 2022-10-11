@@ -61,3 +61,26 @@ Components are intended to be self-contained modules since we can group markup (
 
 Vue gives us the ability to pass data from a parent component down to a child component with the help of props. In Vue, props are attributes that need to be given a value in the parent component and have to be explicitly declared in the child component. As a result, props can only flow in a single direction (parent to child), and never in the opposite direction (child to parent)
 
+# 3. Single-file components
+
+## Managing data between components
+
+We’ve stressed that components should be as self-contained and isolated as much as possible. Taking into account the scope of our application - we know that there should be some level of communication between the components (e.g. submitting an event entry in CalendarEntry should surface an event on CalendarDay). This brings us to component communication and/or state management.
+
+### Parent-Child Components
+
+Since every component has it’s own isolated scope, child components can never (and should never) reference data directly from parent components. For a child component to access data from a parent, data has to flow from the parent down to the child with the help of props. This design greatly simplifies the understanding of an applications data flow since child components will never be able to mutate parent state directly.
+
+### Child-Parent Components
+
+Since props can only flow in a single direction from parent to child, children components can only directly communicate with a parent through custom events. Vue’s custom events work by triggering events within a particular component, $emit(nameOfEvent), and listening for that event in another component, $on(nameOfEvent). Data can also be passed through these events.
+
+### Sibling Components
+
+Managing data between sibling components are more difficult than that of parent-child (or childparent). Props cannot be used since sibling components are independent of one another (i.e. a sibling component isn’t rendered within another sibling component).
+
+Managing data between sibling components in Vue can be categorized in three main buckets:
+
+* Using a global event bus
+* Using a simple, shared store object (for simple state management)
+* Using the state management library Vue
