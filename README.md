@@ -92,3 +92,6 @@ Managing data between sibling components in Vue can be categorized in three main
 # 5. Introduction to Vuex
 
 \-
+
+---
+---
