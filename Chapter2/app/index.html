@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../public/style.css">
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
+        <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <h2 class="title has-text-centered dividing-header">UpVote!</h2>
+        </div>
+
+        <div class="section">
+            <article class="media">
+                <figure class="media-left">
+                    <img src="../public/images/submissions/image-yellow.png" alt="Image" class="image is-64x64">
+                </figure>
+
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>
+                                <a v-bind:href="submissions[0].url" class="has-text-info">{{ submissions[0].title }}</a>
+                                <span class="tag is-small">{{ submissions[0].id }}</span>
+                            </strong>
+                            <br>
+                                {{ submissions[0].description }}
+                            <br>
+                            <small class="is-size-7">
+                                Submitted by:
+                                <img v-bind:src="submissions[0].avatar" alt="Daniel" class="image is-24x24">
+                            </small>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="media-right">
+                    <span class="icon is-small">
+                        <i class="fa fa-fa-chevron-up"></i>
+                        <strong class="has-text-info">{{ submissions[0].votes }}</strong>
+                    </span>
+                </div>
+            </article>
+        </div>
+
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="./seed.js"></script>
+        <script src="./main.js"></script>
+    </body>
+</html>
