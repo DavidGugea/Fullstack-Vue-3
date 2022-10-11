@@ -84,3 +84,7 @@ Managing data between sibling components in Vue can be categorized in three main
 * Using a global event bus
 * Using a simple, shared store object (for simple state management)
 * Using the state management library Vue
+
+# 4. Custom Events
+
+\-
