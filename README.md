@@ -88,3 +88,7 @@ Managing data between sibling components in Vue can be categorized in three main
 # 4. Custom Events
 
 \-
+
+# 5. Introduction to Vuex
+
+\-
